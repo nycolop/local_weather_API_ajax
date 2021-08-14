@@ -123,3 +123,13 @@ h1 {
         font-size: 2vw;
     }
 }
+
+@media screen and (max-height: 700px) {
+	main section article {
+		margin-top: 5%;
+	}
+	
+	main section {
+		margin-top: 2%;
+	}
+}
