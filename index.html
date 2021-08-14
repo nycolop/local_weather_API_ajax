@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/styles/style.css">
+    <script type="module" src="./resources/scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Local Weather App</h1>
+    </header>
+    <main>
+        <h2>
+            <span id="city"></span>, 
+            <span id="country"></span>
+        </h2>
+        <article>
+            <h3 id="main_weather"></h3>
+            <h3>
+                <span id="main_temp"></span>
+                °
+                <span id="main_measure"></span>
+            </h3>
+        </article>
+        <img id="weather_icon" src="" alt="weather icon">
+        <h3 id="weather_description"></h3>
+        <section>
+            <article>
+                <h3>Min-temp:</h3>
+                <h4>
+                    <span id="min_temp"></span>
+                    °
+                    <span class="measure"></span>
+                </h4>
+            </article>
+            <article>
+                <h3>Humidity</h3>
+                <h4>
+                    <span id="humidity"></span>
+                    %
+                </h4>
+            </article>
+            <article>
+                <h3>Max-temp:</h3>
+                <h4>
+                    <span id="max_temp"></span>
+                    °
+                    <span class="measure"></span>
+                </h4>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <h3>Made by <a href="https://github.com/necogamy" target="_blank">Nicogamy</a></h3>
+    </footer>
+</body>
+</html>

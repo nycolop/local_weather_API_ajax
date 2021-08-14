@@ -1,0 +1,17 @@
+html * {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+
+#main_measure {
+    color: red;
+}
+
+#main_measure:hover {
+    cursor: pointer;
+    color: brown;
+}
+
+#weather_description {
+    text-transform: capitalize;
+}
