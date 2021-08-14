@@ -1,10 +1,25 @@
 html * {
     font-family: Roboto, sans-serif;
     text-align: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+:root {
+    --main-color: rgb(255, 112, 87);
+}
+
+body {
+    padding: 3%;
+    background-color: azure;
+    height: 100vh;
+    width: 100vw;
 }
 
 #main_measure {
-    color: red;
+    color: var(--main-color);
 }
 
 #main_measure:hover {
@@ -14,4 +29,97 @@ html * {
 
 #weather_description {
     text-transform: capitalize;
+}
+
+main section {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+main section article {
+    margin-top: 10%;
+}
+
+main > article {
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+}
+
+footer h3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 30px;
+}
+
+footer h3 a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+main img {
+    margin: 6% 0;
+}
+
+main > h2 {
+    margin: 10% 0 7% 0;
+    font-size: 7vw;
+}
+
+
+h1 {
+    font-size: 10vw;
+}
+
+
+#max_temp,
+#humidity,
+#min_temp {
+    color: brown;
+}
+
+.medium {
+    font-size: 5vw;
+}
+
+
+@media screen and (min-width: 790px) {
+    h1 {
+        font-size: 5vw;
+    }
+    main img {
+        margin: 3% 0;
+    }
+    
+    main > h2 {
+        margin: 5% 0 3% 0;
+    }
+
+    main section {
+        gap: 5%;
+        margin-top: 5%;
+    }
+    
+    main > article {
+        gap: 4%;
+    }
+
+    .medium {
+        font-size: 2vw;
+    }
+
+    main section {
+        flex-direction: row;
+    }
+
+    main section article {
+        margin-top: 0;
+    }
+
+    main > h2 {
+        font-size: 2vw;
+    }
 }

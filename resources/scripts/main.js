@@ -39,9 +39,9 @@ location()
         weatherThings.weather_description = weatherReceivedObject.weather[0].description;
         weatherThings.main_weather = weatherReceivedObject.weather[0].main;
         weatherThings.country = weatherReceivedObject.sys.country;
-        weatherThings.min_temp = weatherReceivedObject.main.temp_min;
-        weatherThings.max_temp = weatherReceivedObject.main.temp_max;
-        weatherThings.main_temp = weatherReceivedObject.main.temp;
+        weatherThings.min_temp = parseInt(weatherReceivedObject.main.temp_min);
+        weatherThings.max_temp = parseInt(weatherReceivedObject.main.temp_max);
+        weatherThings.main_temp = parseInt(weatherReceivedObject.main.temp);
 
         for (let selector in documentSelectors) {
             if (selector === 'measure' 
@@ -54,28 +54,39 @@ location()
         documentSelectors.weather_icon.setAttribute('src', weatherThings.weather_icon);
 
         let measure = 'C';
+        const minFahrenheit = toFahrenheit(weatherThings.min_temp);
+        const maxFahrenheit = toFahrenheit(weatherThings.max_temp);
+        const fahrenheit = toFahrenheit(weatherThings.main_temp);
 
-        function changeMeasure() {
+        function changeMeasure(measure) {
             for (let i = 0; i < documentSelectors.measure.length; i++) {
                 documentSelectors.measure[i].innerHTML = measure;
             }
             
             documentSelectors.main_measure.innerHTML = measure;
-        }    
 
-        changeMeasure();
+            if (measure === 'C') {
+                documentSelectors.main_temp.innerHTML = weatherThings.main_temp;
+                documentSelectors.max_temp.innerHTML = weatherThings.max_temp;
+                documentSelectors.min_temp.innerHTML = weatherThings.min_temp;
+            }
+            else if (measure === 'F') {
+                documentSelectors.main_temp.innerHTML = fahrenheit;
+                documentSelectors.max_temp.innerHTML = maxFahrenheit;
+                documentSelectors.min_temp.innerHTML = minFahrenheit;
+            }
+        }    
+        changeMeasure(measure);
 
         documentSelectors.main_measure.addEventListener('click', () => {
             if (measure === 'C') measure = 'F';
             else if (measure === 'F') measure = 'C';
 
-            changeMeasure();
+            changeMeasure(measure);
         });
-
-
-
     });
 
-// User Story: I can see the weather in my current location.
-// User Story: I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
-// User Story: I can push a button to toggle between Fahrenheit and Celsius.
+    
+function toFahrenheit(celsius) {
+    return parseInt((celsius * 1.8) + 32);
+}
