@@ -1,6 +1,6 @@
 # **Basic Weather App**
 ## **showing local weather with an API and AJAX**
-### [You can see the project here](https://necogamy.github.io/local_weather_API_ajax/)
+### [You can see the project here](https://nycolop.github.io/local_weather_API_ajax/)
 
 ## **Overview**
 ![screenshot](./screenshot.png)
